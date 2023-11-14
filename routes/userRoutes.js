@@ -24,7 +24,6 @@ router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
             { $project: { month: { $month: "$createdAt" } } },
             { $group: { _id: "$month", total: { $sum: 1 } } },
         ]);
-        console.log(data);
 
         res.status(200).json(data);
     } catch (error) {
