@@ -26,8 +26,8 @@ mongoose
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
